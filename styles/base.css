@@ -1,0 +1,11 @@
+.two-columns, .two-cols-header {
+    display: flex;
+    gap: 20px; /* Adjust the gap as needed */
+}
+
+.red-background {
+    color: white;
+    background-color: rgb(200,25,25);
+}
+
+
