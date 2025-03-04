@@ -3,13 +3,13 @@
 ### &nbsp;
 
 - Discretization techniques:
-    - Finite Element Method (FEM) ➡ Basis functions "interact" only locally.
-    - Finite Volume Method (FVM) ➡ Cell fluxes only "interact" with neighbors.
-    - Finite Difference Method (FDM) ➡ Stencils only involve neighboring grid points.
+    - Finite Element Method (FEM) ➡ Basis functions "interact" only locally
+    - Finite Volume Method (FVM) ➡ Cell fluxes only to neighbors
+    - Finite Difference Method (FDM) ➡ Stencils only involve neighboring grid points
     - *Etc.*
 - Machine learning:
-    - Feature-representation matrices.
-    - Networks with local interactions.
+    - Feature-representation matrices
+    - Networks with local interactions
     - *Etc.*
 
 ---
@@ -197,19 +197,55 @@ layout: two-cols
 
 ## Example | Sparse matrices
 
-- Code of example
+````md magic-move
+<<<@/snippets/get_element.py python {*}
+<<<@/snippets/get_sparse.py python {5,16-18,21-23|5,13-18|25}
+<<<@/snippets/heat_sparse.py python {14-18}
+````
+
+::right::
+
+## &nbsp;
+
+<v-click at=1>
+
+- Element contributions assembled assembles in COO format:
+    - Efficient and flexible construction
+    - Allows for duplicate values
+
+</v-click>
+
+<v-click at=2>
+
+- Efficiency improvements:
+    - Represent `row_indices`, `col_indices`, `values` by `numpy.array` objects
+    - Allocate memory for these arrays before the loop
+    - Vectorize the assembly operations
+
+</v-click>
+
+<v-click at=3>
+
+- COO matrix converted to CSR for efficient solving
+
+</v-click>
+
+<v-click at=4>
+
+- Direct sparse solving using `scipy.sparse.linalg.solve`
+
+</v-click>
 
 ---
 
-## Solving a sparse system
+## Example | Direct sparse solver
 
 ![Numpy](/images/Sparse_scaling.png)
 <!-- - Still something else needed -->
 
 ---
 
-## Solving a sparse system
+## Example | Direct sparse solver
 
 ![Numpy](/images/Direct_vs_Sparse_scaling.png)
 <!-- - Still something else needed -->
-

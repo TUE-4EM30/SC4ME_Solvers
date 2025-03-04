@@ -57,7 +57,11 @@ layout: two-cols
 
 ## Direct solving using `numpy`
 
-<<<@/snippets/heat.py python {*|13-14|16-17}
+````md magic-move
+<<<@/snippets/heat.py python {*|13-14}
+<<<@/snippets/get_element.py python {*}
+<<<@/snippets/heat.py python {16-17}
+````
 
 ::right::
 
@@ -78,7 +82,7 @@ Out[3]: dtype('float64')
 
 - Heat source vector: $\mathbf{b} \in \mathbb{R}^{N}$
 
-<v-click at=2>
+<v-click at=3>
 
 - Temperature solution vector: 
 $$\mathbf{x} = [T_1, T_2, \ldots, T_N] \in \mathbb{R}^N$$
