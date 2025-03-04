@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import scipy.sparse
 
 # Load the data from the CSV file
 data = np.loadtxt('codes/direct.csv', delimiter=',', comments='//')
@@ -16,6 +17,7 @@ dofs_sp = data_sp[:, 0]
 time_sp = data_sp[:, 1]
 memory_mat_sp = data_sp[:, 2]
 memory_tot_sp = data_sp[:, 3]
+nnz_sp = data_sp[:, 4]
 
 dofs_cg = data_cg[:, 0]
 iter_cg = data_cg[:, 1]
@@ -244,6 +246,30 @@ plt.grid(True, which="both", ls="--")
 plt.legend()
 plt.tight_layout()
 
+#########################
+# Sparsity              #
+#########################
+
+# Create the log-log plots
+plt.figure(figsize=(12, 6))
+
+# Sparsity pattern
+A = scipy.sparse.load_npz(f'codes/A_csr_{64}.npz')
+plt.subplot(1, 2, 1)
+plt.spy(A, markersize=5, color='b')
+plt.xlabel('Sparsity pattern $N=64$')
+plt.tight_layout()
+
+# Plot time vs. DOFs
+plt.subplot(1, 2, 2)
+plt.loglog(dofs_sp, nnz_sp, marker='o', linestyle='-', color='b', label='Nonzeros')
+# Add scaling line with a rate of 1
+plt.loglog(dofs_sp, dofs_sp[0] * (dofs_sp / dofs_sp[0]), linestyle='--', color='k', label='$O(N)$')
+plt.xlabel('$N$')
+plt.ylabel('Nonzeros')
+plt.grid(True, which="both", ls="--")
+plt.legend()
+plt.tight_layout()
 
 # Show the plots
 plt.show()

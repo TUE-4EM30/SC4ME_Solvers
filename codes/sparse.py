@@ -5,7 +5,7 @@ import scipy.sparse, scipy.sparse.linalg
 import inspect
 
 precon = False
-r = 32
+r = 34
 n = math.floor(8*2**(r/4))
 N = n**2
 
@@ -47,7 +47,7 @@ tracemalloc.stop()
 
 # Report the time taken and memory used
 niter = len(res)
-print(f"{N}, {niter}, {end_time - start_time:.2e}, {peak / 10**6:.2e}")
+print(f"{N}, {niter}, {end_time - start_time:.2e}, {peak / 10**6:.2e}, {A.nnz}")
 
 # Export the residuals to a file
 if precon:

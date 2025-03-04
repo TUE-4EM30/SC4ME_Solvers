@@ -1,6 +1,7 @@
 ---
 style: apple-basic
 css: styles.css
+mdc: true
 lineNumbers: true
 hideInToc: true
 class: red-background
