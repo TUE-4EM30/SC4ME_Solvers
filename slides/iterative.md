@@ -14,16 +14,17 @@ layout: two-cols
 ## Jacobi solver analysis
 
 ---
-layout: two-cols
----
 
 ## Continuous Gradient (CG) solver
 
----
-layout: two-cols
+
+![CG](/images/CG_iterations.png)
+
 ---
 
 ## CG example
+
+![CG](/images/Spsolve_vs_CG_scaling.png)
 
 ---
 layout: two-cols

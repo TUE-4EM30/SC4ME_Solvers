@@ -42,9 +42,14 @@ layout: two-cols
 - Idea
 
 ---
-layout: two-cols
+
+
+## Preconditioning example
+
+![Preconditioned CG](/images/Preconditioning_iterations.png)
+
 ---
 
 ## Preconditioning example
 
-- Idea
+![Preconditioned CG scaling](/images/Preconditioning_scaling.png)

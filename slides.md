@@ -7,7 +7,7 @@ class: red-background
 ---
 
 #  Scientific Computing for Mechanical Engineering
-##  Linear algebra
+##  Solving linear systems in Python
 
 ---
 src: ./slides/intro.md

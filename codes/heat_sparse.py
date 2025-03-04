@@ -3,7 +3,9 @@ import math
 import matplotlib.pyplot as plt
 import scipy.sparse, scipy.sparse.linalg
 
-r = 34
+r   = 0.25
+
+r = 12
 n = math.floor(8*2**(r/4))
 
 # Parameters
@@ -30,7 +32,6 @@ for i in range(nx):
             indptr[index+1] = indptr[index] + 1
             data[indptr[index]:indptr[index+1]] = [1]
             indices[indptr[index]:indptr[index+1]] = [index]
-            
         else:
             indptr[index+1] = indptr[index] + 5
             data[indptr[index]:indptr[index+1]] = [-4, 1, 1, 1, 1]
@@ -47,7 +48,10 @@ for i in range(nx):
 
 # Export
 scipy.sparse.save_npz(f'codes/A_csr_{N}.npz', A_csr)
+
 np.save(f'codes/b_{N}.npy', b)
+
+
 
 # # Solve the linear system
 # u = scipy.sparse.linalg.spsolve(A_csr, b)
@@ -57,12 +61,12 @@ np.save(f'codes/b_{N}.npy', b)
 
 # # Plot the final temperature distribution
 # plt.imshow(u, extent=[0, 1, 0, 1], origin='lower', cmap='hot', interpolation='bilinear')
-# plt.title(f'$N$={N}')
+# plt.title(f'$N$={N}, $\epsilon$={eps}')
 # plt.gca().set_xticks([])
 # plt.gca().set_yticks([])
 # plt.xlabel('')
 # plt.ylabel('')
 # plt.show()
 
-# Print memory usage of the sparse matrix A_csr
-print(f"{N}, {(A_csr.data.nbytes + A_csr.indices.nbytes + A_csr.indptr.nbytes) / 1024**2:.2e}")
+# # Print memory usage of the sparse matrix A_csr
+# print(f"{N}, {(A_csr.data.nbytes + A_csr.indices.nbytes + A_csr.indptr.nbytes) / 1024**2:.2e}")
