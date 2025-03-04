@@ -38,19 +38,71 @@
 
 ---
 
-## Example: heat conduction
+## Example | Heat conduction
 
 ![Heat conduction](/images/Flower.png)
 
+- Given the conductivity, $k$, and heat source, $s$, find the temperature, $T$, such that:
+$$
+\begin{align*}
+-\nabla \cdot k \nabla T &= s & &\text{in }\Omega \\
+T &= 0 & &\text{on }\partial \Omega
+\end{align*}
+$$
+- Partial differential equation (PDE) discretized using $N$ nodes, with one DOF (temperature) per node.
+
+---
+layout: two-cols
 ---
 
-## Solving using `numpy`
+## Direct solving using `numpy`
 
-- How solved
+<<<@/snippets/heat.py python {*|13-14|16-17}
+
+::right::
+
+## &nbsp;
+
+- Discretized linear system: $\mathbf{A}\mathbf{x} = \mathbf{b}$
+- Conductivity matrix: $\mathbf{A} \in \mathbb{R}^{N\times N}$
+```py {*}{lines: false}
+In [1]: type(A)
+Out[1]: numpy.ndarray
+
+In [2]: A.shape
+Out[2]: (1024, 1024)
+
+In [3]: A.dtype
+Out[3]: dtype('float64')
+```
+
+- Heat source vector: $\mathbf{b} \in \mathbb{R}^{N}$
+
+<v-click at=2>
+
+- Temperature solution vector: 
+$$\mathbf{x} = [T_1, T_2, \ldots, T_N] \in \mathbb{R}^N$$
+
+- Direct solver: `numpy.linalg.solve` 
+
+</v-click>
 
 ---
 
-## Solving using `numpy` (cont'd)
+## Direct solving using `numpy` | Analysis
 
 ![Numpy](/images/Direct_scaling.png)
 
+---
+
+## Direct solving using `numpy` | Analysis
+
+### &nbsp;
+
+- Simulation time scales with $O(N^3)$:
+    - Can we explain?
+    - Can we improve?
+
+- Memory (RAM) allocation scales with $O(N^2)$:
+    - Can we explain?
+    - Can we improve?
