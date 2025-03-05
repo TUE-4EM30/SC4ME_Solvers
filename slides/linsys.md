@@ -27,7 +27,7 @@ $$
 
 ### &nbsp;
 
-<v-clicks>
+<v-clicks at=0>
 
 - In this lecture we assume:
     - As many linear equations as unknowns (DOFs).
@@ -81,7 +81,8 @@ Using $E_i$, with $i=1,\ldots,N-1$, eliminate $x_i$ from all equations $E_j$, wi
 $$
 \begin{align*}
  A_{jk} &\leftarrow A_{jk} - \frac{A_{ji}}{A_{ii}} A_{ik}   
- & \text{for } k &= i,\ldots,N
+ & b_{j} &\leftarrow b_{j} - \frac{A_{ji}}{A_{ii}} b_{i}   
+ & &\text{for } k = i,\ldots,N  
 \end{align*}
 $$
 
@@ -129,7 +130,7 @@ $$
 
 - Number of multiplications/divisions:
 $$
-1 + \sum_{i=1}^{N-1} (N-i+1) = \frac{N^2-3N+2}{2} = O(N^2)
+1 + \sum_{i=1}^{N-1} (N-i+1) = \frac{N^2+N}{2} = O(N^2)
 $$
 
 </v-click>

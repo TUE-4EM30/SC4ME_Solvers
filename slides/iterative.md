@@ -4,7 +4,7 @@
 
 Direct solvers:
 - Solve a linear system up to machine precision
-- Rely on Gaussian elimination with $\mathcal{O}(n^3)$ solution time
+- Rely on Gaussian elimination with ${O}(N^3)$ solution time
 - Are difficult to parallelize
 
 ### &nbsp;
@@ -142,6 +142,8 @@ layout: two-cols
 
 ## Continuous Gradient (CG)
 
+### &nbsp;
+
 - Search in a direction orthogonal (conjugate) to the previous
 search directions:
 $$\mathbf{x}^{k+1} = \mathbf{x}^{k} + \alpha_k \mathbf{p}_k$$
@@ -215,6 +217,6 @@ $$ \kappa (\textbf{A}) = \frac{\lambda_{\rm max}}{\lambda_{\rm min}}$$
 
 #### &nbsp;
 
-$$ \text{Heat conduction: } \kappa (\textbf{A}) = O(N)$$
+$$ \text{2D heat conduction: } \kappa (\textbf{A}) = O(N)$$
 
 ![CG](/images/CGconditioning.png)

@@ -85,6 +85,8 @@ class: red-background
 
 ### &nbsp;
 
+<v-clicks at=0>
+
 - Direct *vs.* iterative solvers:
     - Direct solvers work well for small (possibly dense) systems.
     - Iterative solvers are preferable when systems become big and are particularly efficient for sparse systems (matrix-vector products).
@@ -92,3 +94,5 @@ class: red-background
     - Solution can become meaningless due to floating point precision.
     - Iterative solvers might converge slowly (or not at all).
     - Use iterative solvers in combination with preconditioners.
+
+</v-clicks>

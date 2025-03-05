@@ -2,10 +2,15 @@
 ### &nbsp;
 - With infinite precision, for an $N$ dimensional system, CG converges in $N$ iterations at most!
 - CG can be interpreted as a direct solution algorithm.
+
+<v-click>
+
 - Reaches a small tolerance in $k_{\rm tol} \ll N$ iterations for well-conditioned systems (small $\kappa$):
 $$k_{\rm tol} = O(\sqrt{\kappa(\textbf{A})}) \log{\left(\frac{1}{\text{tol}}\right)}$$
 - If the matrix $\textbf{A}$ is ill-conditioned (large $\kappa$), the method is highly susceptible to rounding errors:
 $$\|\textbf{e}^k\|_{\mathbf{A}} \leq 2\left[\frac{\sqrt{\kappa(\textbf{A}})-1}{\sqrt{\kappa(\textbf{A}})+1}\right]^k \|\textbf{e}^0\|_{\mathbf{A}} $$
+
+</v-click>
 
 ---
 layout: two-cols-header
@@ -126,7 +131,7 @@ $$ \mathbf{A}\mathbf{x} = \mathbf{b} $$
 
 ### &nbsp;
 
-- Using the inverse matrix $\mathbf{A}^{-1}$ ($O(N^4)$) as a preconditioner $\mathbf{L}$ results in optimal conditioning:
+- Using the inverse matrix $\mathbf{A}^{-1}$ ($O(N^3)$) as a preconditioner $\mathbf{L}$ results in optimal conditioning:
 $$ \kappa(\mathbf{LA}) = \kappa(\mathbf{A}^{-1} \mathbf{A}) = \kappa(\mathbf{I}) = 1 $$
 
 <v-click>

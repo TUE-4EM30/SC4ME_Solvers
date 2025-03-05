@@ -2,12 +2,12 @@
 
 ### &nbsp;
 
-- Discretization techniques:
+- **Discretization techniques:**
     - Finite Element Method (FEM) ➡ Basis functions "interact" only locally
     - Finite Volume Method (FVM) ➡ Cell fluxes only to neighbors
     - Finite Difference Method (FDM) ➡ Stencils only involve neighboring grid points
     - *Etc.*
-- Machine learning:
+- **Machine learning:**
     - Feature-representation matrices
     - Networks with local interactions
     - *Etc.*
@@ -27,7 +27,7 @@
 
 - When the number of non-zero values scales linearly with the size of the matrix ($nnz = O(N)$), a dense matrix (`numpy.array`) with $O(N^2)$ memory complexity is not a good choice. 
 
-<v-space>
+<v-click>
 
 - Variety of sparse matrix formats with $nnz=O(N)$ memory complexity:
     - Diagonal (DIA) format
@@ -38,7 +38,7 @@
 
 ![Sparse matrices](/images/SparseMatrices.png){width=70%}
 
-</v-space>
+</v-click>
 
 ---
 layout: two-cols
