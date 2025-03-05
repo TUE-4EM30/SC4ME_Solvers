@@ -148,6 +148,24 @@ plt.legend()
 plt.tight_layout()
 
 #########################
+# CG iterations 2        #
+#########################
+
+# Create the log-log plots
+plt.figure(figsize=(6, 6))
+
+
+# Plot time vs. DOFs
+plt.subplot(1, 1, 1)
+plt.loglog(dofs_cg, iter_cg, marker='o', linestyle='-', color='b', label='CG iterations')
+plt.loglog(dofs_cg, 0.1*dofs_cg[0] * (dofs_cg / dofs_cg[0])**0.5, linestyle='--', color='k', label='$O(\sqrt{N})$')
+plt.xlabel('$N$')
+plt.ylabel('Iterations')
+plt.grid(True, which="both", ls="--")
+plt.legend()
+plt.tight_layout()
+
+#########################
 # spsolve vs cg         #
 #########################
 
@@ -269,6 +287,24 @@ plt.xlabel('$N$')
 plt.ylabel('Nonzeros')
 plt.grid(True, which="both", ls="--")
 plt.legend()
+plt.tight_layout()
+
+#########################
+# Jacobi                #
+#########################
+
+jacobi = np.loadtxt('codes/jacobi.csv', delimiter=',', comments='//')
+
+# Create the log-log plots
+plt.figure(figsize=(6, 6))
+
+# Plot iterations
+plt.subplot(1, 1, 1)
+plt.loglog(jacobi[:,0], jacobi[:,1], linestyle='-', color='b')
+
+plt.xlabel('Iteration')
+plt.ylabel('Resdiual')
+plt.grid(True, which="both", ls="--")
 plt.tight_layout()
 
 # Show the plots

@@ -241,11 +241,9 @@ layout: two-cols
 ## Example | Direct sparse solver
 
 ![Numpy](/images/Sparse_scaling.png)
-<!-- - Still something else needed -->
 
 ---
 
 ## Example | Direct sparse solver
 
 ![Numpy](/images/Direct_vs_Sparse_scaling.png)
-<!-- - Still something else needed -->
