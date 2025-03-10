@@ -140,7 +140,7 @@ $$\alpha_k = - \frac{\mathbf{r}_k^T \mathbf{r}_k}{\mathbf{r}_k^T \mathbf{A} \mat
 layout: two-cols
 ---
 
-## Continuous Gradient (CG)
+## Conjugate Gradient (CG)
 
 ### &nbsp;
 
